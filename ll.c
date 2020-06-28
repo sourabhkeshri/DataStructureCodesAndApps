@@ -43,12 +43,38 @@ while(p!=NULL){
 return m;
 }
 
+void deleteElements(int position){
+    struct Node* p=NULL;
+if(position==1){
+    p=first;
+    first=first->next;
+    int x=first->data;
+    printf("\nData deleted %d",&x);
+    free(p);
+
+ }
+ else{
+        struct Node*q=NULL;
+        for(int i=0;i<position-1;i++){
+            p=first;
+            q=p;
+            p=p->next;
+        }
+        q->next=p->next;
+        free(p);
+
+ }
+}
+
 int main(){
 int A[]={12,8,9,776,66};
 create(A,5);
 display(first);
 int m=maxInList(first);
 printf("max is :%d",m);
+    
+deleteElements(3);
+display(first)
 
 }
 
