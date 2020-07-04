@@ -66,6 +66,16 @@ if(position==1){
  }
 }
 
+void Reverse(Struct Node *q,Struct Node *p){
+if(p!=NULL){
+Reverse(p,p->next);
+    p->next=q;
+}
+    else{
+    first=q;
+    }
+}
+
 int main(){
 int A[]={12,8,9,776,66};
 create(A,5);
